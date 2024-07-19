@@ -1,0 +1,126 @@
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib")))()
+MakeWindow({
+  Hub = {
+    Title = "Projeto Rickzl",
+    Animation = "por | COLD"
+  },
+  Key = {
+    KeySystem = false,
+    Title = "Key System",
+    Description = "",
+    KeyLink = "",
+    Keys = {"1234"},
+    Notifi = {
+      Notifications = true,
+      CorrectKey = "Running the Script...",
+      Incorrectkey = "The key is incorrect",
+      CopyKeyLink = "Copied to Clipboard"
+    }
+  }
+})
+
+--[[
+  Hub = {
+    Title = "REDz HUB" -- <string> Titulo do seu script
+    Animation = "by : redz9999" -- <string> Adiciona um texto na animacão do seu HUB
+  },
+  Key = {
+    KeySystem = <bollean> Adiciona um sistema de chaves
+    Title = "Key System" <string> Adiciona um titulo ao seu sistema de chaves
+    Description = "" <string> Adiciona uma descrição ao seu sistema de chaves
+    KeyLink = "" <string> Adicina o Link onde pega a chave do HUB
+    Keys = {"1234"} <table> Adiciona as Chaves
+    Notifi = {
+      Notifications = true <boolean> Adicina notificações ao sistema de chaves
+      CorrectKey = "Running the Script..." <string> notificação quando a chave estiver correta
+      Incorrectkey = "The key is incorrect" <string> notificação quando a chave estiver incorreta
+      CopyKeyLink = "Copied to Clipboard" <string> notificação quando o link da chave fir copiado
+    }
+  }
+]]
+MinimizeButton({
+  Image = "",
+  Size = {40, 40},
+  Color = Color3.fromRGB(10, 10, 10),
+  Corner = true,
+  Stroke = false,
+  StrokeColor = Color3.fromRGB(255, 0, 0)
+})
+
+--[[
+  Image = "" <string> imagem do botão
+  Size = {40, 40} <table> tamanho do botão
+  Color = Color3.fromRGB(10, 10, 10) <Color3>  Cor do fundo do botäo
+  Corner = true -- <boolean> Adicina um UICorner
+  Stroke = false <boolean> Adiciona um UIStroke
+  StrokeColor = Color3.fromRGB(255, 0, 0) <Color3> Cor do UIStroke
+]]
+local Main = MakeTab({Name = "Player"})
+
+--[[
+  Name = "Main" <string> Nome da guia
+]]
+local section = AddSection(Main, {"Player"})
+--[[
+  {"Teste"} <table> nome da janela
+]]
+local Slider = AddSlider(Main, {
+  Name = "speed",
+  MinValue = 16,
+  MaxValue = 100,
+  Default = 25,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.Walkspeed = value
+  end
+})
+
+--[[
+  Name = "Slider teste" <string> nome do controle deslizante
+  MinValue = 10 <number> valor minimo
+  MaxValue = 100 <number> valor maximo
+  Default = 25 <number> valor padrão
+  Increase = 1 <number> valor que almenta de acordo com a posição do 
+  Callback = function(Value)
+    função do controle deslizante
+  end
+]]
+local Slider = AddSlider(Main, {
+  Name = "Jump",
+  MinValue = 16,
+  MaxValue = 50,
+  Default = 25,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+  end
+})
+
+--[[
+  Name = "Slider teste" <string> nome do controle deslizante
+  MinValue = 10 <number> valor minimo
+  MaxValue = 100 <number> valor maximo
+  Default = 25 <number> valor padrão
+  Increase = 1 <number> valor que almenta de acordo com a posição do 
+  Callback = function(Value)
+    função do controle deslizante
+  end
+]]
+local Main = MakeTab({Name = "Other"})
+
+--[[
+  Name = "Main" <string> Nome da guia
+]]
+AddButton(Main, {
+  Name = "Delete doors",
+  Callback = function()
+    game.Workspace.Doors:Destroy()
+  end
+})
+
+--[[
+  Name = "Botão teste" <string> nome do seu botão
+  Callback = function()
+    -- funcão do seu botão
+  end
+]]
